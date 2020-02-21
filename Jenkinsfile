@@ -8,6 +8,7 @@ pipeline{
     stages{
         stage("Preparation"){
             steps{
+                input message: "Continuar?", ok: "Sim"
                 sh "pip install -r requirements.txt --user"
             }
         }
