@@ -8,7 +8,9 @@ pipeline{
     stages{
         stage("Preparation"){
             steps{
-                sh "pip3 install -r requirements.txt --user"
+                sh "python3 -m venv env"
+                sh "source ./env/bin/activate"
+                sh "python -m pip install -r requirements.txt"
             }
         }
 
